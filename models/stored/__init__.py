@@ -1,7 +1,7 @@
 
 
 from models import Model
-from stored.v0 import StoredEnergy as V0
+from models.stored.v0 import StoredEnergy as V0
 
 
 class StoredEnergy(Model):

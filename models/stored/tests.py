@@ -1,7 +1,7 @@
 
 
 import unittest
-from stored.v0 import StoredEnergy as V0
+from models.stored.v0 import StoredEnergy as V0
 
 
 class TestStoredEnergyV0(unittest.TestCase):
