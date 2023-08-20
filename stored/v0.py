@@ -10,6 +10,7 @@ class StoredEnergy(Model):
   TOTAL_BODY_WEIGHT = ("total_body_weight", -1.0)
   BODY_WEIGHT_UNIT = ("body_weight_unit", "lbs") # Well, I am a fat American, so... :)
   BODY_FAT_PERCENT = ("body_fat_percent", -1.0)
+  MEASUREMENT_DEVICE = ("measurement_device", None)
 
   def __init__(self):
     Model.__init__(self, [
@@ -18,7 +19,8 @@ class StoredEnergy(Model):
       StoredEnergy.UTC_TIME,
       StoredEnergy.TOTAL_BODY_WEIGHT,
       StoredEnergy.BODY_WEIGHT_UNIT,
-      StoredEnergy.BODY_FAT_PERCENT
+      StoredEnergy.BODY_FAT_PERCENT,
+      StoredEnergy.MEASUREMENT_DEVICE
     ])
 
   @classmethod
@@ -31,7 +33,8 @@ class StoredEnergy(Model):
       StoredEnergy.UTC_TIME[0],
       StoredEnergy.TOTAL_BODY_WEIGHT[0],
       StoredEnergy.BODY_WEIGHT_UNIT[0],
-      StoredEnergy.BODY_FAT_PERCENT[0]
+      StoredEnergy.BODY_FAT_PERCENT[0],
+      StoredEnergy.MEASUREMENT_DEVICE[0]
     ]:
       fields[field] = details.get(field, None)
 
