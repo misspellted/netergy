@@ -21,7 +21,7 @@ class Model:
   def onVersionedValidation(self, version, **details):
     return False
 
-  def validate_unversioned(self, **details):
+  def onUnversionedValidation(self, **details):
     return False
 
   def validate(self, **details):
@@ -31,7 +31,7 @@ class Model:
       version = details.pop("version")
       validated = self.onVersionedValidation(version, **details)
     else:
-      validated = self.validate_unversioned(**details)
+      validated = self.onUnversionedValidation(**details)
 
     return validated
 

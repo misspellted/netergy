@@ -1,10 +1,10 @@
 
 
 from models import Model
-from models.stored.v0 import StoredEnergy as V0
+from models.consumed.v0 import ConsumedEnergy as V0
 
 
-class StoredEnergy(Model):
+class ConsumedEnergy(Model):
   def __init__(self):
     print("oh hai")
     self.versions = dict()
