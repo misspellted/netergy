@@ -13,6 +13,7 @@ class ConsumedEnergy(Model):
   TOTAL_PROTEIN = ("total_protein", -1.0) # Assumed to be grams.
   UTC_STOP_DATE = ("utc_stop_date", None)
   UTC_STOP_TIME = ("utc_stop_time", None)
+  ABSORPTION_PERCENT = ("absorption_percent", -1.0)
   
 
   def __init__(self):
@@ -25,7 +26,8 @@ class ConsumedEnergy(Model):
       ConsumedEnergy.TOTAL_FIBER,
       ConsumedEnergy.TOTAL_PROTEIN,
       ConsumedEnergy.UTC_STOP_DATE,
-      ConsumedEnergy.UTC_STOP_TIME
+      ConsumedEnergy.UTC_STOP_TIME,
+      ConsumedEnergy.ABSORPTION_PERCENT
     ])
 
   @classmethod
@@ -41,7 +43,8 @@ class ConsumedEnergy(Model):
       ConsumedEnergy.TOTAL_FIBER[0],
       ConsumedEnergy.TOTAL_PROTEIN[0],
       ConsumedEnergy.UTC_STOP_DATE[0],
-      ConsumedEnergy.UTC_STOP_TIME[0]
+      ConsumedEnergy.UTC_STOP_TIME[0],
+      ConsumedEnergy.ABSORPTION_PERCENT[0]
     ]:
       fields[field] = details.get(field, None)
 

@@ -29,6 +29,7 @@ class TestConsumedEnergyV0(unittest.TestCase):
     details[V0.TOTAL_PROTEIN[0]] = 0       # To be calculated. # 20oz Bottle Sprite(R)
     details[V0.UTC_STOP_DATE[0]] = "2023-08-21"
     details[V0.UTC_STOP_TIME[0]] = "17:32"
+    details[V0.ABSORPTION_PERCENT[0]] = "75%" # I don't have a clue, but I heard it recently that not everything consumed is absorbed.
     self.assertTrue(V0.validate(**details))
 
   def test_new_instance(self):
@@ -42,4 +43,5 @@ class TestConsumedEnergyV0(unittest.TestCase):
     self.assertEqual(V0.TOTAL_PROTEIN[1], tested[V0.TOTAL_PROTEIN[0]])
     self.assertEqual(V0.UTC_STOP_DATE[1], tested[V0.UTC_STOP_DATE[0]])
     self.assertEqual(V0.UTC_STOP_TIME[1], tested[V0.UTC_STOP_TIME[0]])
+    self.assertEqual(V0.ABSORPTION_PERCENT[1], tested[V0.ABSORPTION_PERCENT[0]])
 
